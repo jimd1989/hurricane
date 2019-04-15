@@ -77,7 +77,7 @@ class ChooseTeams {
         let chooseTeams = makeId("div", "chooseTeams");
         chooseTeams.appendChild(selectText);
         for (let i = 0 ; i < NUM_AVATARS ; i++) {
-            let ct = new ChooseTeam(ts, "img/0" +(i+1).toString() + ".png");
+            let ct = new ChooseTeam(ts, `img/0${(i+1).toString()}.png`);
             cts.push(ct);
             chooseTeams.appendChild(ct.html);
         }
@@ -128,7 +128,7 @@ class Teams {
             this.selectActive();
         } else {
             setTextN(this.chooseTeams.html, 0,
-                "Select team " + (this.active+1).toString());
+                     `Select team ${(this.active+1).toString()}`);
         }
     }
     setAvatar(ct: ChooseTeam): void {

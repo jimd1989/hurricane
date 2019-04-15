@@ -7,4 +7,4 @@ const NUM_AVATARS = 6;
 // TileType
 const IMGS = [
     "5", "10", "25", "50", "100", "volcano", "tornado", "hurricane", "thief"
-].map(x => "<img src=\"img/tile-" + x + ".png\"></img>");
+].map(x => `<img src="img/tile-${x}.png"></img>`);
