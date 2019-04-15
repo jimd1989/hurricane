@@ -18,16 +18,19 @@ enum TileType {
     Thief
 }
 
+// Custom type for a Tile's closure
+type TileF = (() => boolean)
+
 class Tile {
 
 // Represents a single tile on the board, whose onlick action is the
 // evaluation of its niladic closure f. This closure contains reference to
 // the Teams struct and modifies the team scores accordingly.
 
-    f: Function;
-    img: string;
+    readonly f: TileF;
+    readonly img: string;
     html: HTMLElement;
-    constructor(f: Function, type: TileType, n: number) {
+    constructor(f: TileF, type: TileType, n: number) {
         this.f = f;
         this.img = IMGS[<number>type];
         this.html = this.htmlConstructor(n);
@@ -53,7 +56,7 @@ function shuffleTiles(tls: TileType[]): TileType[] {
 
 // Cannonical Fisher-Yates shuffle for randomizing tile order.
 
-        var j, x, i;
+        let j, x, i;
         for (i = tls.length - 1; i > 0; i--) {
                     j = Math.floor(Math.random() * (i + 1));
                     x = tls[i];
@@ -69,7 +72,7 @@ class Board {
 // initialized and printed once, as each individual tile contains a closure
 // with a reference to the Teams struct, where all state is managed.
 
-    all: Tile[];
+    readonly all: Tile[];
     html: HTMLElement;
     constructor(ts: Teams) {
         let tls: Tile[] = [];
@@ -106,7 +109,7 @@ class Board {
         times2.forEach(() => tts.push(TileType.Thief));
         return shuffleTiles(tts);
     }
-    makeFs(ts: Teams): Function[] {
+    makeFs(ts: Teams): TileF[] {
         // Returns a list of closures whose index corresponds to the TileType
         // enum. As the constructor iterates through a shuffled list of
         // TileTypes, it assigns these closures to the new tiles it creates.

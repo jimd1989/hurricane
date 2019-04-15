@@ -98,7 +98,7 @@ class Teams {
     all: Team[];
     board: Board | null;
     chooseTeams: ChooseTeams;
-    count: number;
+    readonly count: number;
     selectTeam: boolean;
     html: HTMLElement;
     constructor(n: number) {
