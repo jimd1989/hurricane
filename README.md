@@ -16,7 +16,7 @@ This activity rewards knowledge, but its chance-heavy nature keeps things exciti
 
 ## Screenshot
 
-[![layout of the Hurricane game board](path)](path)
+[![layout of the Hurricane game board](https://raw.githubusercontent.com/jimd1989/hurricane/master/hurricane-1.png)](https://raw.githubusercontent.com/jimd1989/hurricane/master/hurricane-1.png)
 
 
 ## Installation
