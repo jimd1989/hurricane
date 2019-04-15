@@ -72,7 +72,7 @@ class Board {
     all: Tile[];
     html: HTMLElement;
     constructor(ts: Teams) {
-        let tls = (<Tile[]>[]);
+        let tls: Tile[] = [];
         let tts = this.makeTileTypes();
         let fs = this.makeFs(ts);
         let tiles = makeId("div", "tiles");
@@ -90,7 +90,7 @@ class Board {
     makeTileTypes(): TileType[] {
         // Incredibly stupid syntax, but wanted to avoid for loops and remain
         // ES5 compliant here. Returns a shuffled list of TileTypes.
-        let tts = (<TileType[]>[]);
+        let tts: TileType[] = [];
         const times8 = [1, 2, 3, 4, 5, 6, 7, 8];
         const times3 = [1, 2, 3];
         const times2 = [1, 2];

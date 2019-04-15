@@ -72,7 +72,7 @@ class ChooseTeams {
     all: ChooseTeam[];
     html: HTMLElement;
     constructor(ts: Teams) {
-        let cts = (<ChooseTeam[]>[]);
+        let cts: ChooseTeam[] = [];
         let selectText = makeId("p", "selectText");
         let chooseTeams = makeId("div", "chooseTeams");
         chooseTeams.appendChild(selectText);
@@ -103,7 +103,7 @@ class Teams {
     html: HTMLElement;
     constructor(n: number) {
         this.active = 0;
-        this.all = (<Team[]>[]);
+        this.all = [];
         this.board = null;
         this.count = n;
         this.selectTeam = false;
