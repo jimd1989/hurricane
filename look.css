@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0
+}
+
+html {
+    height: 100%
+}
+
+body {
+    font-family: sans-serif;
+    height: 100%;
+    background: #f7f6e4;
+    text-align: center
+}
+
+body img,
+svg {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    border-radius: 50%;
+    border: 2px #000 solid
+}
+
+#gameArea {
+    font-size: 2em;
+    background: azure;
+    position: relative;
+    margin: 0 auto;
+    max-width: 800px;
+    border: 2px #000 solid
+}
+
+#startScreen {
+    padding: 3em
+}
+
+#startScreen label {
+    padding-bottom: 1em;
+    display: block
+}
+
+#teamN {
+    margin: 0 auto;
+    display: inline-block;
+    margin-right: 1em;
+}
+
+#selectText {
+    padding-bottom: 1em
+}
+
+#chooseTeams {
+    text-transform: uppercase;
+    padding-top: 2em;
+    padding-bottom: 2em
+}
+
+#scoreBoard {
+    z-index: 2;
+    background-color: azure;
+    position: sticky;
+    top: 0;
+    border-bottom: 2px #000 solid
+}
+
+#gameMsg {
+    padding-top: 10px;
+    text-transform: uppercase
+}
+
+.scoreTeam {
+    display: inline-block
+}
+
+.scorePoints {
+    margin-bottom: 10px
+}
+
+.scoreAvatarHidden {
+    display: none
+}
+
+@keyframes incremented {
+    50% {
+        transform: scaleX(-1)
+    }
+}
+
+.scoreAvatarIncremented {
+    animation: incremented .5s steps(1) infinite
+}
+
+.scoreAvatarDecremented {
+    transform: rotate(90deg);
+    filter: grayscale(100%)
+}
+
+.scoreAvatarInactive {
+    opacity: .25
+}
+
+#tiles {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    background: pink
+}
+
+.tile {
+    display: inline-block
+}
+
+.tileInactive {
+    position: relative;
+    z-index: 1;
+    display: inline-block
+}
+
+.tileInactive svg {
+    opacity: .25
+}
